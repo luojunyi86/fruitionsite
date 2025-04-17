@@ -1,7 +1,7 @@
 /* CONFIGURATION STARTS HERE */
 
 /* Step 1: enter your domain name like fruitionsite.com */
-const MY_DOMAIN = "fruitionsite.com";
+const summonskate.com = "fruitionsite.com";
 
 /*
  * Step 2: enter your URL slug to page ID mapping
@@ -9,15 +9,15 @@ const MY_DOMAIN = "fruitionsite.com";
  * The value on the right is the Notion page ID
  */
 const SLUG_TO_PAGE = {
-  "": "771ef38657244c27b9389734a9cbff44",
+  "": "1d7eb12718cb80c9b768c8cec705b02b",
   thanks: "9d9864f5338b47b0a7f42e0f0e2bbf46",
   showcase: "92053970e5084019ac096d2df7e7f440",
   roadmap: "7d4b21bfb4534364972e8bf9f68c2c36"
-};
+};      
 
 /* Step 3: enter your page title and description for SEO purposes */
 const PAGE_TITLE = "Fruition";
-const PAGE_DESCRIPTION =
+const PAGE_DESCRIPTION =      
   "Free, Open Source Toolkit For Customizing Your Notion Page";
 
 /* Step 4: enter a Google Font name, you can choose from https://fonts.google.com */
@@ -36,28 +36,28 @@ Object.keys(SLUG_TO_PAGE).forEach(slug => {
   slugs.push(slug);
   pages.push(page);
   PAGE_TO_SLUG[page] = slug;
-});
+});    
 
 addEventListener("fetch", event => {
   event.respondWith(fetchAndApply(event.request));
-});
+});    
 
 function generateSitemap() {
   let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-  slugs.forEach(
+  slugs.forEach(  
     (slug) =>
-      (sitemap +=
+      (sitemap +=  
         "<url><loc>https://" + MY_DOMAIN + "/" + slug + "</loc></url>")
-  );
+  );  
   sitemap += "</urlset>";
-  return sitemap;
+  return sitemap;  
 }
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, POST, PUT, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type"
-};
+};  
 
 function handleOptions(request) {
   if (
